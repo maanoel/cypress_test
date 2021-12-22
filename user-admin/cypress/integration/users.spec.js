@@ -1,7 +1,11 @@
 describe("Gestão de usuários", () => {
+  beforeEach(() => {
+    cy.exec("npm --prefix ../user-api run clear:db");
+  });
+
   it("Criar um novo usuário", () => {
     //Abrir formulario cadastro
-    cy.visit("#/users");
+    cy.visit("/#/users");
     cy.get("a[aria-label=Create").click();
 
     //preencher o formulário
@@ -10,5 +14,11 @@ describe("Gestão de usuários", () => {
 
     //Enviar o formulário
     cy.get("button[type=submit]").click();
+
+    cy.wait(1000);
+
+    cy.get(".MuiListItemIcon-root > .MuiSvgIcon-root > path").click();
+
+    cy.get(".MuiTable-root tbody tr").should("have.length", 1);
   });
 });
