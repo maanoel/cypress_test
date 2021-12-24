@@ -3,6 +3,12 @@ describe("Gestão de usuários", () => {
     cy.exec("npm --prefix ../user-api run clear:db");
   });
 
+  describe("Listagem", () => {
+    it("contendo 1 usuário", () => {});
+
+    it("sem usuarios", () => {});
+  });
+
   it("Criar um novo usuário", () => {
     //Abrir formulario cadastro
     cy.visit("/#/users");
