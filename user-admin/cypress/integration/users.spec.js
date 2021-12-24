@@ -4,9 +4,26 @@ describe("Gestão de usuários", () => {
   });
 
   describe("Listagem", () => {
-    it("contendo 1 usuário", () => {});
+    it.only("contendo 1 usuário", () => {
+      cy.request("POST", "http://localhost:4000/users", {
+        name: "Usuário 1",
+        email: "manoelvitorbrito@gmail.com",
+      }).should((response) => {
+        expect(response.status).eq(201);
+        cy.visit("/users");
+        cy.wait(1000);
+        cy.get(".MuiTable-root tbody tr").should("have.length", 1);
+      });
+    });
 
-    it("sem usuarios", () => {});
+    it("sem usuarios", () => {
+      cy.visit("/users");
+      cy.wait(1000);
+      cy.contains("No User Yet");
+      cy.contains("");
+      cy.contains("Do you want to add one?").should("exist");
+      cy.contains("Create").should("exist");
+    });
   });
 
   it("Criar um novo usuário", () => {
