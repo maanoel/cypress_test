@@ -44,4 +44,14 @@ describe("Gestão de usuários", () => {
 
     cy.get(".MuiTable-root tbody tr").should("have.length", 1);
   });
+
+  it("Editar usuario", () => {
+    cy.request("POST", "http://localhost:4000/users", {
+      name: "vitor",
+      email: "manoelvitorbrito@gmail.com",
+    }).should((response) => {
+      expect(response.status).toBe(201);
+      cy.visit(`users/${response.body.id}`);
+    });
+  });
 });
