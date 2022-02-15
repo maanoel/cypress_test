@@ -3,7 +3,7 @@ const UserRepository = require("./user-repository.js");
 
 (async () => {
   const uri =
-    "mongodb+srv://vitor2908:33516568@clusterinicial.ga1at.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+    "mongodb+srv://vitor2908:33516568@clusterinicial.ga1at.mongodb.net/users_db?retryWrites=true&w=majority";
   const client = new MongoClient(uri);
   await client.connect();
   const collection = client.db("users_db").collection("users");

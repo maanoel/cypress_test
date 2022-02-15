@@ -20,12 +20,16 @@ let client;
 let connected = false;
 
 app.use(async (req, res, next) => {
+  console.log("TESTE VITOOOR");
   if (!connected) {
     const uri =
-      "mongodb+srv://vitor2908:33516568@clusterinicial.ga1at.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+      "mongodb+srv://vitor2908:33516568@clusterinicial.ga1at.mongodb.net/users_db?retryWrites=true&w=majority";
     client = new MongoClient(uri);
+
     await client.connect();
+
     const collection = client.db("users_db").collection("users");
+
     userRepository = new UserRepository(collection);
     connected = true;
   }

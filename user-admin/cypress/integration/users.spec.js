@@ -4,7 +4,7 @@ describe("Gestão de usuários", () => {
   });
 
   describe("Listagem", () => {
-    it.only("contendo 1 usuário", () => {
+    it("contendo 1 usuário", () => {
       cy.request("POST", "http://localhost:4000/users", {
         name: "Usuário 1",
         email: "manoelvitorbrito@gmail.com",
@@ -50,7 +50,7 @@ describe("Gestão de usuários", () => {
       name: "vitor",
       email: "manoelvitorbrito@gmail.com",
     }).should((response) => {
-      expect(response.status).toBe(201);
+      expect(response.status).to.equal(201);
       cy.visit(`users/${response.body.id}`);
     });
   });
