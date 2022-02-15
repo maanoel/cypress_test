@@ -32,8 +32,8 @@ describe("Gestão de usuários", () => {
     cy.get("a[aria-label=Create").click();
 
     //preencher o formulário
-    cy.get("#name").type("Joyn Doe");
-    cy.get("#email").type("John does.com");
+    cy.get("#name").type("vitor");
+    cy.get("#email").type("manoelvitorbrito@gmail.com");
 
     //Enviar o formulário
     cy.get("button[type=submit]").click();
@@ -52,6 +52,16 @@ describe("Gestão de usuários", () => {
     }).should((response) => {
       expect(response.status).to.equal(201);
       cy.visit(`users/${response.body.id}`);
+
+      //verifica estado inicial do formulário
+      cy.wait(2000);
+      cy.get("#name").should("have.value", "vitor");
+      cy.get("#email").should("have.value", "manoelvitorbrito@gmail.com");
+
+      //altera os dados do usuário
+
+      cy.get("#name").clear().type("vitor");
+      cy.get("#email").clear().type("manoelvitorbrito@gmail.com");
     });
   });
 });
