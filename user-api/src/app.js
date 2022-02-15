@@ -20,7 +20,6 @@ let client;
 let connected = false;
 
 app.use(async (req, res, next) => {
-  console.log("TESTE VITOOOR");
   if (!connected) {
     const uri =
       "mongodb+srv://vitor2908:33516568@clusterinicial.ga1at.mongodb.net/users_db?retryWrites=true&w=majority";
