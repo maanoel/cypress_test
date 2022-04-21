@@ -47,6 +47,5 @@ describe("User Login", () => {
     //em algum momento. Após realizar a requisição do POST, esse código é executado em seguida,
     //pois a aplicação não deve ficar travada, esperando a reposta do servidor
     alert("EXECUTANDO ANTES");
-    let oCodigoDessaLinhaVaiExecutarAntesDoShould = "";
   });
 });
