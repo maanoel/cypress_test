@@ -32,8 +32,6 @@ describe("User Login", () => {
       // cy.setCookie("INGRESSCOOKIE", INGRESSCOOKIEVALUE);
       // cy.setCookie("JSESSIONID", JSESSIONIDVALUE);
 
-      cy.request("GET", "https://ciaweb-homolog.conqueronline.com.br/aluno");
-
       cy.visit("https://ciaweb-homolog.conqueronline.com.br/aluno");
 
       cy.url().should(
