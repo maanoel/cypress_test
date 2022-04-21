@@ -42,10 +42,11 @@ describe("User Login", () => {
       );
     });
 
-    //Essa linha abaixo é executada antes do código que está dentro do should?
-    //Mas por quê? Por que é quando enviamos um POST, ou um get para o servidor, precisamos esperar uma resposta.
-    //A resposta do servidor é executada depois, dentro do should( isso se chama código assincrono, ele executa depois em algum momento)
-    //Após realizar a requisição do POST, esse código é executado em seguida, pois a aplicação não deve ficar travada.
+    //Essa linha abaixo é executada antes do código que está dentro do should
+    //Mas por quê? Por que quando enviamos um POST ou um GET para o servidor, precisamos esperar uma resposta
+    //A resposta do servidor é executada depois, dentro do should( isso se chama código assincrono, ele executa depois
+    //em algum momento. Após realizar a requisição do POST, esse código é executado em seguida,
+    //pois a aplicação não deve ficar travada, esperando a reposta do servidor
 
     let oCodigoDessaLinhaVaiExecutarAntesDoShould = "";
   });
