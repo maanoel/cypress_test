@@ -46,7 +46,7 @@ describe("User Login", () => {
     //A resposta do servidor é executada depois, dentro do should( isso se chama código assincrono, ele executa depois
     //em algum momento. Após realizar a requisição do POST, esse código é executado em seguida,
     //pois a aplicação não deve ficar travada, esperando a reposta do servidor
-
+    alert("EXECUTANDO ANTES");
     let oCodigoDessaLinhaVaiExecutarAntesDoShould = "";
   });
 });
