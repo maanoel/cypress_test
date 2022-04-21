@@ -38,6 +38,7 @@ describe("User Login", () => {
         "contain",
         "https://ciaweb-homolog.conqueronline.com.br/aluno"
       );
+      //O teste é valido apenas se mudou para página de login ;)
     });
 
     //Essa linha abaixo é executada antes do código que está dentro do should
